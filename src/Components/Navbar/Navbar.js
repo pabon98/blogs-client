@@ -11,7 +11,7 @@ const Navbar = () => {
             <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
   <a class="navbar-brand" href="#nav">
-      <img src={logo} alt="" width="100px" height="50px" class="d-inline-block align-text-top"/>
+      <img className='' src={logo} alt="" width="100px" height="50px" class="d-inline-block align-text-top"/>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -48,14 +48,14 @@ const Navbar = () => {
               </NavLink>
         <NavLink
                 className="Nav_link text-dark me-3 decoration"
-                to="/contact"
+                to="/login"
                 activeClassName="selected"
               >
                 Login
               </NavLink>
         <NavLink
                 className="Nav_link text-dark me-3 decoration"
-                to="/contact"
+                to="/registration"
                 activeClassName="selected"
               >
                 Registration
