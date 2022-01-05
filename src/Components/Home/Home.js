@@ -1,12 +1,15 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
+import Banner from '../Banner/Banner';
+import Blogs from '../Blogs/Blogs';
+import Footer from '../Footer/Footer';
 import './Home.css'
 
 const Home = () => {
     return (
         <div>
-            <Navbar></Navbar>
-            <h1>This is homepage</h1>
+           <Banner></Banner>
+           <Blogs></Blogs>
+           <Footer></Footer>
         </div>
     );
 };
