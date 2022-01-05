@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import News from "../News/News";
 
 const Newsfeed = () => {
-    return (
-        <div>
-            <h1>This is news feed page where you will see all the posts</h1>
-        </div>
-    );
+  const { totalblogs, setTotalBlogs } = useState([]);
+  useEffect(() => {
+    fetch("./data.json")
+      .then((res) => res.json())
+      .then((data) => setTotalBlogs(data));
+  }, []);
+  return (
+    <div>
+      <h1>Our all blogs</h1>
+      <div className="row">
+      {
+                  totalblogs.map(blogs=>
+                  <div className="col-md-4">
+                      <News
+                  key={blogs.id}
+                  blogs={blogs}
+                  ></News>
+                  
+                  </div>
+                )
+            }
+      </div>
+    </div>
+  );
 };
 
 export default Newsfeed;
