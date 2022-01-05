@@ -46,6 +46,20 @@ const Navbar = () => {
               >
                 Contact Us
               </NavLink>
+        <NavLink
+                className="Nav_link text-dark me-3 decoration"
+                to="/contact"
+                activeClassName="selected"
+              >
+                Login
+              </NavLink>
+        <NavLink
+                className="Nav_link text-dark me-3 decoration"
+                to="/contact"
+                activeClassName="selected"
+              >
+                Registration
+              </NavLink>
         </li>
         
         {/* {
