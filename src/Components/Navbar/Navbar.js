@@ -1,75 +1,60 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import useAuth from "../hooks/useAuth/useAuth";
-import logo from '../../images/vehica-logo.webp';
-import "./Navbar.css";
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+// import useAuth from '../hooks/useAuth';
+import logo from '../../images/blogger-logo1.jpg'
+import './Navbar.css'
+
 const Navbar = () => {
-  const { user, handleLogOut } = useAuth();
-  return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <div class="container-fluid">
-        
-        <img style={{width:'200px'}}  className="img-fluid" src={logo} alt="" />
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-5 mb-lg-0">
-            <li className="nav-item">
-              <NavLink
-                className="Nav_link"
+//   const { user, handleLogOut } = useAuth();
+    return (
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#nav">
+      <img src={logo} alt="" width="120px" height="70px" class="d-inline-block align-text-top"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav mx-5 text-dark">
+        <li class="nav-item">
+        <NavLink
+                className="Nav_link text-dark me-3 decoration"
                 to="/home"
                 activeClassName="selected"
               >
                 Home
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="Nav_link"
-                to="/newsfeed"
+        </li>
+        <li class="nav-item">
+       
+        <NavLink
+                className="Nav_link text-dark me-3 decoration"
+                to="/home"
                 activeClassName="selected"
               >
-               Newsfeed
+                Newsfeed
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="Nav_link"
-                to="/about"
-                activeClassName="selected"
-              >
-                About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="Nav_link"
+        </li>
+        <li class="nav-item">
+       
+        <NavLink
+                className="Nav_link text-dark me-3 decoration"
                 to="/contact"
                 activeClassName="selected"
               >
-                Contact
+                Contact Us
               </NavLink>
-            </li>
-           
-            <br />
-           
-            <br />
-            {
+        </li>
+        
+        {/* {
             user.email&&
             <Link to="/dashboard">
-              <button className="btn btn btn-outline-danger me-3">DASHBOARD</button>
+              <button className="btn btn btn-outline-danger me-3">Dashboard</button>
             </Link>
           }
-            <li className="nav-item nav-text text-white">Welcome :{user?.displayName}</li>
+            <li className="nav-item nav-text text-dark">Welcome: { user?.displayName}</li>
             {
              (user.photoURL && user.email) &&  <img
              src={user?.photoURL}
@@ -79,41 +64,44 @@ const Navbar = () => {
              alt=""
              className="pull-left img-circle login"
            />
-           }
+           } */}
           </ul>
           
-        
-           {user.email ? (
+        <div className='ms-auto'>
+          
+        {/* {user.email ? (
              
-              <div>
-                <button
-                onClick={handleLogOut}
-                className="btn btn btn-outline-danger position-absolute top-50 end-0 translate-middle-y mx-5"
-                type=""
-                data-bs-toggle="tooltip"
-                data-bs-placement="bottom"
-              >
-                Logout
-              </button>
-              </div>
-            ) : (
-              <NavLink to="/loginform">
-                <button
-                  className="btn  btn-outline-danger position-absolute top-50 end-0 translate-middle-y mx-5"
-                  type=""
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="bottom"
-                >
-                  Login
-                </button>
-              </NavLink>
-            )}
-            
-         
+             <div>
+               <button
+               onClick={handleLogOut}
+               className="btn btn btn-dark "
+               type=""
+               data-bs-toggle="tooltip"
+               data-bs-placement="bottom"
+             >
+               Logout
+             </button>
+             </div>
+           ) : (
+             <NavLink to="/loginform">
+               <button
+                 className="btn btn-dark mx-auto"
+                 type=""
+                 data-bs-toggle="tooltip"
+                 data-bs-placement="bottom"
+               >
+                 Login
+               </button>
+             </NavLink>
+           )} */}
         </div>
-      </div>
-    </nav>
-  );
+           
+        
+       </div>
+    </div>
+</nav>
+        </div>
+    );
 };
 
 export default Navbar;
