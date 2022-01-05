@@ -9,6 +9,7 @@ import Newsfeed from './Components/Newsfeed/Newsfeed';
 import Navbar from './Components/Navbar/Navbar';
 import NotFound from './Components/NotFound/NotFound';
 import Contact from './Components/Contact/Contact';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}>
           </Route>
        </Routes>
+       <Footer></Footer>
      </Router>
     </div>
   );

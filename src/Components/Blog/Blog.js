@@ -1,9 +1,10 @@
 import React from 'react';
+import './Blog.css'
 
 const Blog = (props) => {
     const{title,image,description,published} = props.blog
     return (
-        <div>
+        <div className='blog'>
             <div class="col">
     <div class="card my-2">
       <img src={image} class="card-img-top" alt="..."/>
