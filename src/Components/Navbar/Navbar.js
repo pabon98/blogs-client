@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import useAuth from '../hooks/useAuth';
 import logo from '../../images/blogger-logo1.jpg'
 import './Navbar.css'
@@ -20,7 +20,7 @@ const Navbar = () => {
       <ul class="navbar-nav mx-5 text-dark">
         <li class="nav-item">
         <NavLink
-                className="Nav_link text-dark me-3 decoration"
+                className="Nav_link text-dark me-2 decoration"
                 to="/home"
                 activeClassName="selected"
               >
@@ -30,7 +30,7 @@ const Navbar = () => {
         <li class="nav-item">
        
         <NavLink
-                className="Nav_link text-dark me-3 decoration"
+                className="Nav_link text-dark me-2 decoration"
                 to="/newsfeed"
                 activeClassName="selected"
               >
@@ -40,13 +40,13 @@ const Navbar = () => {
         <li class="nav-item">
        
         <NavLink
-                className="Nav_link text-dark me-3 decoration"
+                className="Nav_link text-dark me-2 decoration"
                 to="/contact"
                 activeClassName="selected"
               >
-                Contact Us
+                Contact
               </NavLink>
-        <NavLink
+              <NavLink
                 className="Nav_link text-dark me-3 decoration"
                 to="/login"
                 activeClassName="selected"
@@ -54,7 +54,7 @@ const Navbar = () => {
                 Login
               </NavLink>
         <NavLink
-                className="Nav_link text-dark me-3 decoration"
+                className="Nav_link text-dark me-2 decoration"
                 to="/registration"
                 activeClassName="selected"
               >
