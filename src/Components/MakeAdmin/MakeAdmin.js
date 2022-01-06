@@ -5,16 +5,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    // fetch("https://murmuring-castle-14767.herokuapp.com/makeAdmin", {
-    //   method: "PUT",
-    //   headers: { "content-type": "application/json" },
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((result) => console.log(result));
-    //   alert('Admin added Successfully')
-    //   document.getElementById('form-reset').reset()
-    // console.log(data);
+   
   };
   return (
     <div>
