@@ -4,9 +4,11 @@
   
   /* Set gray background color and 100% height */
   .sidenav {
-    padding-top: 20px;
-    background-color: rgb(239, 235, 243);
-    height: 150%;
+  border: 1px solid rgb(238, 219, 219);
+  padding: 20px;
+  box-shadow: 5px 10px rgb(247, 243, 243);
+  background-color: rgb(239, 235, 243);
+  height: 120%;
   }
   
   /* On small screens, set height to 'auto' for sidenav and grid */

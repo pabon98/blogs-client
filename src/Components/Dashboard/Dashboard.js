@@ -86,7 +86,7 @@ const Dashboard = () => {
     const { user, logOut } = useAuth();
 
     return (
-       <div className=' '>
+       <div>
             <div class="container-fluid text-center">
       <div class="row content">
         <div class="col-sm-2 col-md-2 sidenav">
