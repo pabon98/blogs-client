@@ -10,26 +10,50 @@ import Navbar from './Components/Navbar/Navbar';
 import NotFound from './Components/NotFound/NotFound';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
+import Login from './Components/Login/Login';
+import Registration from './Components/Registration/Registration'
+import AuthProvider from './Contexts/AuthProvider';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Addpost from './Components/AddPost/Addpost';
+import MyPost from './Components/MyPost/MyPost';
+import ManagePost from './Components/Dashboard/ManagePost/ManagePost';
+import MakeAdmin from './Components/MakeAdmin/MakeAdmin';
+
 
 function App() {
   return (
     <div className="App">
-     <Router>
-       <Navbar></Navbar>
+    <AuthProvider>
+    <Router>
+       {/* <Navbar></Navbar> */}
        <Routes>
-         <Route exact path="/" element={<Home></Home>} >
+         <Route  path="/" element={<Home></Home>} >
          </Route>
         <Route path="/home" element={<Home></Home>}>
         </Route>
+        <Route path="/login" element={<Login></Login>}>
+        </Route>
+        <Route path="/registration" element={<Registration></Registration>}>
+         </Route>
+         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+           <Route  path="addpost" element={<Addpost></Addpost>}></Route>
+           <Route path="mypost" element={<MyPost></MyPost>}></Route>
+           <Route  path="manageposts" element={<ManagePost></ManagePost>}>
+           </Route>
+           <Route  path="makeadmin" element={<MakeAdmin></MakeAdmin>}>
+           </Route>
+         </Route>
         <Route path="/newsfeed" element={<Newsfeed></Newsfeed>}>
         </Route>
+        
         <Route path="/contact" element={<Contact></Contact>}>
         </Route>
         <Route path="*" element={<NotFound></NotFound>}>
           </Route>
        </Routes>
-       <Footer></Footer>
+       {/* <Footer></Footer> */}
      </Router>
+    </AuthProvider>
     </div>
   );
 }

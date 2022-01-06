@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-// import useAuth from '../hooks/useAuth';
+import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import logo from '../../images/blogger-logo1.jpg'
 import './Navbar.css'
 
 const Navbar = () => {
-//   const { user, handleLogOut } = useAuth();
+  const { user, logOut } = useAuth();
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light">
@@ -17,10 +17,10 @@ const Navbar = () => {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse " id="navbarNav">
-      <ul class="navbar-nav mx-5 text-dark">
+      <ul class="navbar-nav me-auto text-dark">
         <li class="nav-item">
         <NavLink
-                className="Nav_link text-dark me-2 decoration"
+                className="Nav_link text-dark mx-3 decoration"
                 to="/home"
                 activeClassName="selected"
               >
@@ -30,7 +30,7 @@ const Navbar = () => {
         <li class="nav-item">
        
         <NavLink
-                className="Nav_link text-dark me-2 decoration"
+                className="Nav_link text-dark mx-3 decoration"
                 to="/newsfeed"
                 activeClassName="selected"
               >
@@ -40,21 +40,15 @@ const Navbar = () => {
         <li class="nav-item">
        
         <NavLink
-                className="Nav_link text-dark me-2 decoration"
+                className="Nav_link text-dark mx-3 decoration"
                 to="/contact"
                 activeClassName="selected"
               >
                 Contact
               </NavLink>
-              <NavLink
-                className="Nav_link text-dark me-3 decoration"
-                to="/login"
-                activeClassName="selected"
-              >
-                Login
-              </NavLink>
+             
         <NavLink
-                className="Nav_link text-dark me-2 decoration"
+                className="Nav_link text-dark mx-3 decoration"
                 to="/registration"
                 activeClassName="selected"
               >
@@ -62,7 +56,7 @@ const Navbar = () => {
               </NavLink>
         </li>
         
-        {/* {
+        {
             user.email&&
             <Link to="/dashboard">
               <button className="btn btn btn-outline-danger me-3">Dashboard</button>
@@ -78,16 +72,16 @@ const Navbar = () => {
              alt=""
              className="pull-left img-circle login"
            />
-           } */}
+           }
           </ul>
           
         <div className='ms-auto'>
           
-        {/* {user.email ? (
+        {user.email ? (
              
              <div>
                <button
-               onClick={handleLogOut}
+               onClick={logOut}
                className="btn btn btn-dark "
                type=""
                data-bs-toggle="tooltip"
@@ -97,7 +91,7 @@ const Navbar = () => {
              </button>
              </div>
            ) : (
-             <NavLink to="/loginform">
+             <NavLink to="/login">
                <button
                  className="btn btn-dark mx-auto"
                  type=""
@@ -107,7 +101,7 @@ const Navbar = () => {
                  Login
                </button>
              </NavLink>
-           )} */}
+           )}
         </div>
            
         
