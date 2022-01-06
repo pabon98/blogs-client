@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 import styles from "./Registration.css"
 
 const Register = () => {
@@ -20,7 +22,9 @@ const Register = () => {
         signUpWithEmailPassword(signinData)
     }
     return (
-        <div className={`${styles.body} p-5`}>
+        <div>
+            <Navbar/>
+            <div className={`${styles.body} p-5`}>
             <div className="p-5 bg-white rounded">
                 <h1 className='text-center fw-bold'>Register</h1>
                 <Form className='pt-5' onSubmit={handleRegister} >
@@ -43,6 +47,8 @@ const Register = () => {
                 {error && <p className='text-danger mt-5'>{error}</p>}
                 <p className='mt-5 text-center'>Already have an account ? <NavLink to="/login">Login</NavLink></p>
             </div>
+        </div>
+        <Footer/>
         </div>
     );
 };

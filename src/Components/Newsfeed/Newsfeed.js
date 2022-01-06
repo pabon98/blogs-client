@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 import News from "../News/News";
 
 const Newsfeed = () => {
@@ -9,7 +11,9 @@ const Newsfeed = () => {
       .then((data) => setTotalBlogs(data));
   }, []);
   return (
-    <div className="container">
+    <div>
+      <div className="container">
+      <Navbar/>
       <h1>Our All Blogs</h1>
       <div className="row">
       {
@@ -24,6 +28,9 @@ const Newsfeed = () => {
                 )
             }
       </div>
+      
+    </div>
+    <Footer/>
     </div>
   );
 };

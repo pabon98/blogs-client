@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 const Contact = () => {
     const { register, handleSubmit, formState: { errors }} = useForm();
     const onSubmit = (data) => {
@@ -9,7 +11,9 @@ const Contact = () => {
     }
   
     return (
-        <div className='w-50 ms-auto me-auto'>
+        <div>
+            <Navbar/>
+            <div className='w-50 ms-auto me-auto'>
                 <h1>Contact Us</h1>
                 <form id='reset' onSubmit={handleSubmit(onSubmit)} className="p-4">
                             <input name="name" className="form-control" placeholder="Your Name" {...register("name",{ required: true })} />
@@ -26,7 +30,10 @@ const Contact = () => {
 
                             </div>
                         </form>
+                        
             </div>
+            <Footer/>
+        </div>
      
     );
 };
