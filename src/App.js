@@ -6,10 +6,8 @@ import {
 } from "react-router-dom";
 import Home from './Components/Home/Home';
 import Newsfeed from './Components/Newsfeed/Newsfeed';
-import Navbar from './Components/Navbar/Navbar';
 import NotFound from './Components/NotFound/NotFound';
 import Contact from './Components/Contact/Contact';
-import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
 import Registration from './Components/Registration/Registration'
 import AuthProvider from './Contexts/AuthProvider';
@@ -25,7 +23,6 @@ function App() {
     <div className="App">
     <AuthProvider>
     <Router>
-       {/* <Navbar></Navbar> */}
        <Routes>
          <Route  path="/" element={<Home></Home>} >
          </Route>
@@ -51,7 +48,6 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}>
           </Route>
        </Routes>
-       {/* <Footer></Footer> */}
      </Router>
     </AuthProvider>
     </div>

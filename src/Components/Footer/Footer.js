@@ -7,7 +7,7 @@ const Footer = () => {
         <div class="footer-items">
           <h2 className="text-start">Blog-World</h2>
           <p>
-            Blogworld - worldwide newspaper since 2022. Over 5000+ peope daily visited our site.
+            Blogworld - worldwide newspaper since 2022. Over 5000+ people daily visited our site.
           </p>
         </div>
 
