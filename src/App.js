@@ -16,6 +16,7 @@ import Addpost from './Components/AddPost/Addpost';
 import MyPost from './Components/MyPost/MyPost';
 import ManagePost from './Components/Dashboard/ManagePost/ManagePost';
 import MakeAdmin from './Components/MakeAdmin/MakeAdmin';
+import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -32,7 +33,9 @@ function App() {
         </Route>
         <Route path="/registration" element={<Registration></Registration>}>
          </Route>
-         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+         <Route path="/dashboard" element={<PrivateRoute>
+          <Dashboard></Dashboard>
+         </PrivateRoute>}>
            <Route  path="addpost" element={<Addpost></Addpost>}></Route>
            <Route path="mypost" element={<MyPost></MyPost>}></Route>
            <Route  path="manageposts" element={<ManagePost></ManagePost>}>
@@ -40,7 +43,9 @@ function App() {
            <Route  path="makeadmin" element={<MakeAdmin></MakeAdmin>}>
            </Route>
          </Route>
-        <Route path="/newsfeed" element={<Newsfeed></Newsfeed>}>
+        <Route path="/newsfeed" element={<PrivateRoute>
+          <Newsfeed></Newsfeed>
+        </PrivateRoute>}>
         </Route>
         
         <Route path="/contact" element={<Contact></Contact>}>

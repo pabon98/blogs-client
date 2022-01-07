@@ -1,11 +1,15 @@
 import React from 'react';
-import Login from '../Login';
-import Home from '../../Home/Home';
 import useAuth from '../../../hooks/useAuth';
+import { Navigate, useLocation } from 'react-router-dom';
 
-const PrivateRoute = () => {
+const PrivateRoute = ({children}) => {
     const { user } = useAuth()
-    return user.email ? <Login /> : <Home />
+    let location = useLocation()
+    // return user.email ? <Dashboard /> : <Login />
+    if(user?.email){
+        return children;
+    }
+    return <Navigate to="/login" state = {{from:location}}/>
 };
 
 export default PrivateRoute;

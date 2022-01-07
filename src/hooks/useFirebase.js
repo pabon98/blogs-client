@@ -21,15 +21,17 @@ const useFirebase = () => {
                 const user = userCredential.user;
                 console.log(user);
                 setError('');
-                dispatch(addUser({ name, email }))
-                setUser({ name, email })
+                
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
+                    setUser({ name, email })
+                    dispatch(addUser({ name, email }))
                     setError('')
                 }).catch((error) => {
                     setError(error.message)
                 });
+               
             })
             .catch((error) => {
                 const errorMessage = error.message;

@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import styles from "./Registration.css"
 
 const Register = () => {
-    const { signUpWithEmailPassword, error } = useAuth();
+    const { signUpWithEmailPassword, user, error } = useAuth();
     const [signinData, setSigninData] = useState({})
+    let navigate = useNavigate()
+    if(user?.email){
+        navigate("/home")  
+    }
     const handleSigninData = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -18,8 +22,8 @@ const Register = () => {
     }
     const handleRegister = e => {
         console.log(signinData.email, signinData.password);
-        e.preventDefault();
         signUpWithEmailPassword(signinData)
+        e.preventDefault()
     }
     return (
         <div>

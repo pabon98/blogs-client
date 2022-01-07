@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import   "./Login.css";
 
@@ -8,6 +8,10 @@ import   "./Login.css";
 const Login = () => {
     const { loginWithEmailPassword, error, logOut, user } = useAuth()
     const [loginData, setLoginData] = useState({})
+    let navigate = useNavigate()
+    if(user?.email){
+        navigate("/home")  
+    }
     const handleLoginData = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -41,7 +45,7 @@ const Login = () => {
                     </button>
                 </Form>
                 {error && <p className='text-danger mt-5'>{error}</p>}
-                <p className='mt-5 text-center'>Don't have an account ? <NavLink to="/register">Sign up</NavLink></p>
+                <p className='mt-5 text-center'>Don't have an account ? <NavLink to="/registration">Sign up</NavLink></p>
                 {user.email ? <button className='btn btn-danger d-block mx-auto' onClick={logOut}>LogOut</button> : <p></p>}
             </div>
         </div>
