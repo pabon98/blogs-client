@@ -16,21 +16,7 @@ const Dashboard = () => {
           
            { isAdmin?
            <div>
-            <Link to="/home">
-                <button className='btn btn-warning'>Home</button>
-             </Link>
-             <br />
-             <Link to="addpost">
-                 <button className='btn btn-warning my-3'>Add a Post</button>
-             </Link>
-             <br />
-             <Link to="mypost">
-                 <button className='btn btn-warning'>MyPost</button>
-             </Link>
-            </div>
-            :
-             <div>
-             <Link to="/home" className='btn btn-danger my-3'>
+            <Link to="/home" className='btn btn-danger my-3'>
                  Home
              </Link>
              <br />
@@ -40,6 +26,20 @@ const Dashboard = () => {
              <br />
              <Link to="manageposts" className='btn btn-danger my-3'>
                  ManagePosts
+             </Link>
+            </div>
+            :
+             <div>
+             <Link to="/home">
+                <button className='btn btn-warning my-2'>Home</button>
+             </Link>
+             <br />
+             <Link to="addpost">
+                 <button className='btn btn-warning my-2'>Add a Post</button>
+             </Link>
+             <br />
+             <Link to="mypost">
+                 <button className='btn btn-warning my-2'>MyPost</button>
              </Link>
              </div>}
              <br />
