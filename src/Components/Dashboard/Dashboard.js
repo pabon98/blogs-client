@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Dashboard.css'
 
 const Dashboard = () => {
     const { user, logOut } = useAuth();
+    const[isAdmin, setIsAdmin] = useState(false)
 
     return (
        <div>
             <div class="container-fluid text-center">
       <div class="row content">
         <div class="col-sm-2 col-md-2 sidenav">
-          <h3>DASHBOARD</h3>
+          <h3>Dashboard</h3>
           
-          <Link to="/home">
+           { isAdmin?
+           <div>
+            <Link to="/home">
                 <button className='btn btn-warning'>Home</button>
              </Link>
              <br />
@@ -24,7 +27,9 @@ const Dashboard = () => {
              <Link to="mypost">
                  <button className='btn btn-warning'>MyPost</button>
              </Link>
-              <br />
+            </div>
+            :
+             <div>
              <Link to="/home" className='btn btn-danger my-3'>
                  Home
              </Link>
@@ -36,6 +41,7 @@ const Dashboard = () => {
              <Link to="manageposts" className='btn btn-danger my-3'>
                  ManagePosts
              </Link>
+             </div>}
              <br />
              {user.email ? (
              
