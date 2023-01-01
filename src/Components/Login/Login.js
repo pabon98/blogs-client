@@ -6,12 +6,24 @@ import   "./Login.css";
 
 
 const Login = () => {
-    const { loginWithEmailPassword, error, logOut, user } = useAuth()
+    const {handleGoogleSignIn, loginWithEmailPassword, error, logOut, user, setUser, setError } = useAuth()
     const [loginData, setLoginData] = useState({})
     let navigate = useNavigate()
     if(user?.email){
         navigate("/home")  
     }
+    const handleGoogleSignInRedirect = () => {
+        handleGoogleSignIn()
+       .then((result) => {
+         console.log(result.user);
+         setUser(result.user);
+         setError("");
+         
+       })
+       .catch((error) => {
+         // setError(error.message);
+       });
+   };
     const handleLoginData = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -42,6 +54,10 @@ const Login = () => {
                     </Form.Group>
                     <button className='d-block btn btn-primary w-100 rounded-pill mt-5' type="submit">
                         Login
+                    </button>
+                    <button onClick={handleGoogleSignInRedirect} className='d-block btn btn-success w-100 rounded-pill mt-3' type="submit">
+                    <i className="fab fa-google me-2" />
+                        Sign in with Google
                     </button>
                 </Form>
                 {error && <p className='text-danger mt-5'>{error}</p>}

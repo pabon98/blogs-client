@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,GoogleAuthProvider, updateProfile, onAuthStateChanged, signInWithEmailAndPassword, signOut, signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import initializeAuthentication from "../Components/Firebase/Firebase.init";
@@ -12,6 +12,12 @@ const useFirebase = () => {
     const dispatch = useDispatch();
 
     const auth = getAuth();
+    const handleGoogleSignIn = () => {
+        setIsLoading(true);
+        const googleProvider = new GoogleAuthProvider();
+       return signInWithPopup(auth, googleProvider)
+        
+      };
     const signUpWithEmailPassword = ({ name, email, password }) => {
         console.log(email, password);
         setIsLoading(true)
@@ -80,6 +86,7 @@ const useFirebase = () => {
         });
     }, [])
     return {
+        handleGoogleSignIn,
         signUpWithEmailPassword,
         loginWithEmailPassword,
         user,

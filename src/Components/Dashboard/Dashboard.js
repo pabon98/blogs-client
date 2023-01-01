@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Dashboard.css'
 
 const Dashboard = () => {
     const { user, logOut } = useAuth();
-    const[isAdmin, setIsAdmin] = useState(false)
+    const[isAdmin, setIsAdmin] = useState(false);
 
     return (
        <div>
@@ -14,7 +14,7 @@ const Dashboard = () => {
         <div class="col-sm-2 col-md-2 sidenav">
           <h3>Dashboard</h3>
           
-           { isAdmin?
+          { isAdmin?
            <div>
             <Link to="/home" className='btn btn-danger my-3'>
                  Home
@@ -39,7 +39,7 @@ const Dashboard = () => {
              </Link>
              <br />
              <Link to="mypost">
-                 <button className='btn btn-warning my-2'>MyPost</button>
+                 <button className='btn btn-warning my-2'>My Post</button>
              </Link>
              </div>}
              <br />
